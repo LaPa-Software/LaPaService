@@ -28,7 +28,18 @@ function renderClients(list) {
 }
 
 function getClients(data,meta) {
-    if(meta){try{data=JSON.parse(data);}catch(e){console.log('Error: '+data);document.getElementById('listClients').innerHTML='Не удалось получить ответ API';return;}localStorage.setItem('listClients',JSON.stringify(data.listClients));}else{xhr(getClients,'//lapacore.projects.ponomarevlad.ru/api.php?q='+JSON.stringify({'action':'listClients'}),true)}
+    if (meta) {
+        try {
+            data = JSON.parse(data);
+        } catch (e) {
+            console.log('Error: ' + data);
+            document.getElementById('listClients').innerHTML = 'Не удалось получить ответ API';
+            return;
+        }
+        localStorage.setItem('listClients', JSON.stringify(data.listClients));
+    } else {
+        xhr(getClients, '//LaPaService.projects.ponomarevlad.ru/api.php?q=' + JSON.stringify({'action': 'listClients'}), true)
+    }
     if(localStorage.getItem('listClients'))renderClients(JSON.parse(localStorage.getItem('listClients')));
 }
 

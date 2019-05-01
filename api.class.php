@@ -30,7 +30,7 @@ function logout(){
 function domains(){
     global $QUERY;
     // TODO: Checking from DB
-    $domains=['lapacore.projects.ponomarevlad.ru'=>['id'=>1,'status'=>'beta-trial','work'=>'normal','version'=>'v.3.0beta1']];
+    $domains = ['lapaservice.projects.ponomarevlad.ru' => ['id' => 1, 'status' => 'beta-trial', 'work' => 'normal', 'version' => 'v.3.0beta1']];
     return $domains;
 }
 
@@ -94,7 +94,7 @@ function listClients(){
                 'url' => '//' . $entry
             ];
             if (is_file(__DIR__ . '/domains/' . $entry . '/pic.png')) {
-                $list[$entry]['img'] = '//lapacore.projects.ponomarevlad.ru/domains/' . $entry . '/pic.png';
+                $list[$entry]['img'] = '//LaPaService.projects.ponomarevlad.ru/domains/' . $entry . '/pic.png';
             }
         }
     }
